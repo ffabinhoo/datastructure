@@ -59,12 +59,9 @@ Return false.
 		tt4.left = tt1;
 		tt4.right = tt2;
 		
-		
-		
 		boolean ret = st.isSubtree(t3, tt4);
 		
 		System.out.println(ret);
-		
 		
 	}
 
@@ -88,8 +85,5 @@ Return false.
 		} else {
 			return false;
 		}
-		
-		
 	}
-
 }
