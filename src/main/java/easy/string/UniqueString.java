@@ -5,7 +5,7 @@ public class UniqueString {
 	public static void main(String[] args) {
 		UniqueString unique = new UniqueString();
 		
-		String s = "fabio";
+		String s = "abcdefa";
 		boolean result = unique.isUnique(s );
 		System.out.println(result);
 	}
