@@ -43,7 +43,7 @@ A solution set is:
 		int l = 1;
 		int m = 2;
 		boolean found = false;
-
+		
 		List<Integer> auxsum = new ArrayList<Integer>();
 		Arrays.sort(nums);
 		for (i = 0; i < nums.length-2; i++) {
@@ -82,23 +82,33 @@ A solution set is:
 
 		return sums;
 	}
-	
+	//-4, -1, -1, 0, 1, 2
 	public static List<List<Integer>> threeSum2(int[] nums) {
 	    Arrays.sort(nums);
 	    List<List<Integer>> list = new ArrayList<List<Integer>>();
 	    for(int i = 0; i < nums.length-2; i++) {
-	        if(i > 0 && (nums[i] == nums[i-1])) continue; // avoid duplicates
+	        if(i > 0 && (nums[i] == nums[i-1])) {
+	        	continue; 
+	        }
+	        
 	        for(int j = i+1, k = nums.length-1; j<k;) {
 	            if(nums[i] + nums[j] + nums[k] == 0) {
 	                list.add(Arrays.asList(nums[i],nums[j],nums[k]));
 	                j++;k--;
-	                while((j < k) && (nums[j] == nums[j-1]))j++;// avoid duplicates
-	                while((j < k) && (nums[k] == nums[k+1]))k--;// avoid duplicates
-	            }else if(nums[i] + nums[j] + nums[k] > 0) k--;
-	            else j++;
+	                while((j < k) && (nums[j] == nums[j-1])) {
+	                	j++;
+	                }
+	                while((j < k) && (nums[k] == nums[k+1])) {
+	                	k--;
+	                }
+	            }else if(nums[i] + nums[j] + nums[k] > 0) {
+	            	k--;
+	            }
+	            else {
+	            	j++;
+	            }
 	        }
 	    }
 	    return list;
 	}
-
 }
