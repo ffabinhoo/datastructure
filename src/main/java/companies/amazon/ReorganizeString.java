@@ -21,7 +21,7 @@ public class ReorganizeString {
 
 		ReorganizeString re = new ReorganizeString();
 
-		String s = "aaab";
+		String s = "aaaaxxx";
 		System.out.println(re.reorganizeString(s));
 
 	}

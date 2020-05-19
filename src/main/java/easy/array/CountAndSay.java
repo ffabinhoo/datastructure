@@ -1,9 +1,24 @@
 package easy.array;
 
 public class CountAndSay {
+	
+	/*
+	 * 
+The count-and-say sequence is the sequence of integers with the first five terms as following:
+
+1.     1
+2.     11
+3.     21
+4.     1211
+5.     111221
+
+1 is read off as "one 1" or 11.
+11 is read off as "two 1s" or 21.
+21 is read off as "one 2, then one 1" or 1211.
+	 */
 
 	public static void main(String[] args) {
-		int n = 5;
+		int n = 6;
 		System.out.println(countAndSay(n));
 	}
 
