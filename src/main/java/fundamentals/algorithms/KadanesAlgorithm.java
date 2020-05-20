@@ -1,6 +1,6 @@
-package easy.array;
+package fundamentals.algorithms;
 
-public class MaximumSubarray {
+public class KadanesAlgorithm {
 	/*
 	 * Given an integer array nums, find the contiguous subarray (containing at
 	 * least one number) which has the largest sum and return its sum.
@@ -16,7 +16,7 @@ public class MaximumSubarray {
 
 	public static void main(String[] args) {
 
-		MaximumSubarray max = new MaximumSubarray();
+		KadanesAlgorithm max = new KadanesAlgorithm();
 
 		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 		int result = max.maxSubArray(nums);
