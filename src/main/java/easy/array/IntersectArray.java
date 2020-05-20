@@ -1,34 +1,53 @@
 package easy.array;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class IntersectArray {
 
 	public static void main(String[] args) {
 
-		int[] num1 = { 5, 2, 2, 1 };
-		int[] num2 = { 1, 2, 1, 7 };
+		int[] num1 = { 1,2,2,1 };
+		int[] num2 = { 2,2 };
 		int[] it = intersect2(num1, num2);
 
 		for (int i = 0; i < it.length; i++) {
 			System.out.println(it[i]);
 		}
 	}
+	
+	public static int[] intersection(int[] nums1, int[] nums2) {
+	    HashSet<Integer> set1 = new HashSet<Integer>();
+	    for (Integer n : nums1) set1.add(n);
+	    HashSet<Integer> set2 = new HashSet<Integer>();
+	    for (Integer n : nums2) set2.add(n);
 
-	public static int[] intersect2(int[] num1, int[] num2) {
-		Arrays.sort(num1);
-		Arrays.sort(num2);
+	    set1.retainAll(set2);
+
+	    int [] output = new int[set1.size()];
+	    int idx = 0;
+	    
+	    for (int s : set1) output[idx++] = s;
+	    
+	    return output;
+	  }
+
+	public static int[] intersect2(int[] nums1, int[] nums2) {
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
 		
 		int i=0,j=0,k=0;
 		
-		int[] arr = new int [num1.length + num2.length];
+		Integer[] arr = new Integer [nums1.length + nums2.length];
 		
-		while(i < num1.length && j < num2.length) {
+		while(i < nums1.length && j < nums2.length) {
 			
-			if(num1[i]==num2[j]) {
-				arr[k] = num1[i];
+			if(nums1[i]==nums2[j]) {
+				arr[k] = nums1[i];
 				k++; i++; j++;
-			} else if(num1[i] < num2[j]) {
+			} else if(nums1[i] < nums2[j]) {
 				i++;
 				
 			}else {
@@ -37,8 +56,12 @@ public class IntersectArray {
 			
 		}
 		
-        
-		return Arrays.copyOf(arr, k);
+		Set<Integer> targetSet = new HashSet<Integer>();
+		Collections.addAll(targetSet, arr);
+		targetSet.remove(null);
+		int[] array = targetSet.stream().mapToInt(Integer::intValue).toArray();
+		
+		return array;
     }
 
 }
