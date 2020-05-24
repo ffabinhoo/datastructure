@@ -1,4 +1,4 @@
-package designpattern.abstractmethod;
+package designpattern.abstractfactory;
 
 public class Main {
 	
