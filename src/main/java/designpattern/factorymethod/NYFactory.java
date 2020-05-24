@@ -4,12 +4,14 @@ public class NYFactory extends PizzaFactory{
 
 	@Override
 	public Pizza createPizza(TypePizza typePizza) {
-		if (typePizza.equals("BANANA")) {
+		if (typePizza.equals(TypePizza.BANANA)) {
 			return new BananaPizza();
-		}else {
+		}else if (typePizza.equals(TypePizza.SYDNEY)){
 			return new SydneyStylePizza();
+		}else if (typePizza.equals(TypePizza.CALABREZA)) {
+			return new CalabrezaPizza();
 		}
-		
+		return null;
 	}
 
 	

@@ -7,10 +7,14 @@ public class SydneyFactory extends PizzaFactory{
 	public Pizza createPizza(TypePizza typePizza) {
 		if (typePizza.equals(TypePizza.BANANA)) {
 			return new BananaPizza();
-		}else {
-			return null;
+		}else if (typePizza.equals(TypePizza.SYDNEY)){
+			return new SydneyStylePizza();
+		}else if (typePizza.equals(TypePizza.CALABREZA)) {
+			return new CalabrezaPizza();
 		}
+		return null;
 	}
+
 
 	
 
