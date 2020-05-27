@@ -6,8 +6,7 @@ public class DynamicSum {
 		
 		DynamicSum dy = new DynamicSum();
 		
-		int[] arr = {1,2,3,4,5,6,7,8,9,10};
-		int i = dy.sum(2);
+		int i = dy.sum(100);
 		System.out.println(i);
 	}
 
