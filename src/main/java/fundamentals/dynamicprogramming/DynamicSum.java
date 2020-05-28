@@ -5,16 +5,22 @@ public class DynamicSum {
 	public static void main(String[] args) {
 		
 		DynamicSum dy = new DynamicSum();
-		
-		int i = dy.sum(100);
+		int n = 6000;
+		int[] memo = new int[n+1];
+		Integer i = dy.sum(n, memo);
 		System.out.println(i);
 	}
 
-	private int sum(int i) {
+	private int sum(Integer i, int[] memo) {
 		if (i==0) {
 			return 0;
+		}
+		
+		if (memo[i] > 0) {
+			return memo[i];
 		}else {
-			return sum(i-1)+ i;
+			memo[i] =  sum(i-1, memo)+ i;
+			return memo[i];
 		}
 	}
 
