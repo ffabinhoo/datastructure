@@ -24,12 +24,12 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 
 */
-public class ClimbingStairs {
+public class ClimbingStairsKCases {
 	
 	public static void main(String[] args) {
-		ClimbingStairs c = new ClimbingStairs();
+		ClimbingStairsKCases c = new ClimbingStairsKCases();
 		
-		int stairs = 4;
+		int stairs = 20;
 		
 		int[] memo = new int[stairs+1];
 		int result = c.climbStairs(stairs, memo);
@@ -44,7 +44,12 @@ public class ClimbingStairs {
 		if(memo[n]>0) {
 			return memo[n];
 		}else {
-			memo[n] = climbStairs(n-1, memo)+climbStairs(n-2, memo);
+			
+			for (int i = 1; i <= n; i++) {
+				
+				memo[n] += climbStairs(n-i, memo);
+			}
+			
 			return memo[n];
 		}
 	}
