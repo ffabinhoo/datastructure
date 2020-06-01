@@ -1,4 +1,4 @@
-package easy.shortestpath;
+package path.easy;
 
 import core.TreeNode;
 
