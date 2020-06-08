@@ -10,7 +10,7 @@ public class MethodAsLambdaExample {
 		
 		IntFunction<String> intToString = Integer::toString;
 		System.out.println("Integer max contains  " + intToString.apply(Integer.MAX_VALUE).length() + " numbers ");
-		//System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.MAX_VALUE);
 		
 		//*********************************
 		
