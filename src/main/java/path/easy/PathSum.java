@@ -29,11 +29,11 @@ public class PathSum {
 		
 		PathSum pathSum = new PathSum();
 		
-		int sum = 23;
+		int sum = 22;
 		
 		TreeNode root 		= new TreeNode(5);
-		TreeNode root_4  = new TreeNode(4);
-		TreeNode root_8 = new TreeNode(8);
+		TreeNode root_4     = new TreeNode(4);
+		TreeNode root_8     = new TreeNode(8);
 		TreeNode node_11 	= new TreeNode(11);
 		TreeNode node_13 	= new TreeNode(13);
 		TreeNode node_4  	= new TreeNode(4);
@@ -64,7 +64,10 @@ public class PathSum {
 		if (root==null) return false;
 		
 		if(sum-root.val <0) return false;
+		
 		System.out.println(sum - root.val);
+		
+		//Base case true - sum - root.val ==0 and left and right equals null
 		if (root.left==null && root.right==null && sum - root.val==0) {
 			return true;
 		}else {

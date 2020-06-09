@@ -20,7 +20,7 @@ class MinStack {
     	minStack.push(-3);
     	minStack.getMin();  // --> Returns -3.
     	minStack.pop();
-    	minStack.top();     // --> Returns 0.
+    	minStack.top();     // --> Returns 0. //peak
     	minStack.getMin();  // --> Returns -2.
 	}
     
