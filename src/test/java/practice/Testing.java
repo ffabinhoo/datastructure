@@ -54,6 +54,14 @@ public class Testing {
 	    assertEquals("testing", name);
 	}
 	
-	
+	@Test
+	public void whenOptionalFilterWorks_thenCorrect() {
+	    Integer year = 2020;
+	    Optional<Integer> yearOptional = Optional.of(year);
+	    boolean is2020 = yearOptional.filter(y -> y == 2020).isPresent();
+	    assertTrue(is2020);
+	    boolean is2017 = yearOptional.filter(y -> y == 2017).isPresent();
+	    assertFalse(is2017);
+	}
 
 }
